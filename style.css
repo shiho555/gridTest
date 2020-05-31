@@ -1,0 +1,287 @@
+@charset "utf-8";
+/* CSS Document */
+/* -------------------- */
+/* -------------------- */
+/* 基本レイアウト ここから↓ */
+*{	
+	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+	color: #5f5039;
+	font-size: 87.5%;
+	line-height:1.2em;
+	letter-spacing:1.6pt;
+	font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	
+}
+h2{
+	font-size: 3em;
+	line-height:1.2em;
+	letter-spacing:2.8pt;
+	margin-left:20px;
+}
+h3{
+	font-size: 2.3em;
+	line-height:1.2em;
+	letter-spacing:2.8pt;
+	margin: 10px 0;
+}
+p{
+	font-size: 1.8em;
+	line-height:1.8em;
+	letter-spacing:2.8pt;
+}
+a{
+	text-decoration: none;
+	font-size: 1.5em;
+	line-height:1.8em;
+	letter-spacing:2.8pt;
+}
+img {
+	border: 0;
+}
+li{
+	list-style-type: none;
+}
+
+body{
+	width: 100%;
+	text-align: center;
+/*	background-color:rgba(86,76,73,0.1);*/
+/*	background-color:#ffffff;*/
+	/*background-color:rgba(252, 250, 242, 1);*/
+	background-color:rgba(131, 121, 100, 0.5);
+}
+#home>.ctr_wrapper{
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+/*グリッドの指定　ここから↓*/
+#home>.ctr_wrapper>.container{
+    display: grid;
+	grid-template-rows:auto;
+    grid-template-columns: 180px 1fr;
+    grid-template-areas:
+        " prof slide"
+		" prof contents";
+}
+#home>.ctr_wrapper>.container>.prof{
+	display: grid;
+	grid-auto-rows: auto;
+    grid-template-columns:180px;
+	grid-template-areas:
+        "prof_main"
+		"prof_sub";
+}
+#home>.ctr_wrapper>.container>.contents{
+	display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        " title"
+        " item_wrapper";
+}
+#home>.ctr_wrapper>.container>.contents>#item_wrapper{
+	display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        " itemA itemB"
+        " itemC itemD";
+}
+
+/*グリッドの指定　ここまで↑*/
+
+/* -------------------- */
+/* -------------------- */
+/* header ここから↓ */
+.flex_parent{
+	display:flex;
+}
+.flex_child{
+	flex:auto;
+}
+#h_wrapper>.header{
+	height:60px;
+	padding: 0 40px;
+	background-color:#97b3c3;
+	opacity: 0.8;
+	align-items: center;
+	
+/*	box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+  	-webkit-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+  	-moz-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);*/
+}
+#h_wrapper>.header>h1>a>img:hover{
+	opacity: 0.9;
+}
+#h_wrapper>.header>nav{
+	margin-left: auto;
+}
+#h_wrapper>.header>nav>ul>li{
+	margin-left:20px;
+}
+#h_wrapper>.header>nav>ul>li>a{
+	font-size: 1.8em;
+	color: #fffff9;
+}
+#h_wrapper>.header>nav>ul>li>a:hover{
+	opacity: 0.9;
+}
+/* header ここまで↑*/
+/* -------------------- */
+/* -------------------- */
+#home>.ctr_wrapper>.container>.prof{
+	grid-area: prof;
+	border: dotted 2px #837964;
+	margin: 20px 0;
+	text-align: center;
+}
+#home>.ctr_wrapper>.container>.prof p{
+	color:#fff;
+}
+
+#home>.ctr_wrapper>.container>.prof>.prof_main{
+	grid-area: prof_main;
+	padding: 10px;
+}
+
+#home>.ctr_wrapper>.container>.prof>.prof_img{
+	margin: 10px;
+}
+#home>.ctr_wrapper>.container>.prof>.prof_main>.prof_text,
+.prof>.prof_main>.prof_link{
+	text-align: left;
+	margin-top:20px;
+}
+#home>.ctr_wrapper>.container>.prof>.prof_main>.prof_text dl,
+#home>.ctr_wrapper>.container>.prof>.prof_main>.prof_link dl{
+	margin-bottom:5px;
+
+}
+
+#home>.ctr_wrapper>.container>.prof>.prof_sub{
+	grid-area: prof_sub;
+	position: relative;
+}
+#home>.ctr_wrapper>.container>.prof>.prof_sub>.prof_bnr{
+	position: absolute;
+	left: 20px;
+	bottom:10px;
+}
+/* -------------------- */
+/* -------------------- */
+/* スライド ここから↓ */
+#home>.ctr_wrapper>.container>.slide{
+	grid-area: slide;
+	text-align: center;
+	margin:30px 0 30px 20px;	
+}
+
+/* スライド ここまで↑*/
+/* -------------------- */
+/* -------------------- */
+
+/* -------------------- */
+/* -------------------- */
+/* コンテンツ ここから↓ */
+
+#home .ctr_wrapper>.container>.contents{
+	grid-area: contents;
+	text-align:center;
+}
+
+#home .ctr_wrapper>.container>.contents>.title>h2,
+#home .ctr_wrapper>.container>.contents>.title>p{
+	grid-area:title;
+	color: #fff;
+}
+#home .ctr_wrapper>.container>.contents>.title>i{
+	color: #fff;
+}
+
+#home .ctr_wrapper>.container>.contents>#item_wrapper{
+	grid-area:item_wrapper;
+	margin:10px;
+}
+
+#home .ctr_wrapper>.container>.contents>#item_wrapper .itemA{
+	grid-area:itemA;
+}
+#home .ctr_wrapper>.container>.contents>#item_wrapper .itemB{
+	grid-area:itemB;
+
+	
+}
+#home .ctr_wrapper>.container>.contents>#item_wrapper .itemC{
+	grid-area:itemC;
+}
+#home .ctr_wrapper>.container>.contents>#item_wrapper .itemD{
+	grid-area:itemD;
+}
+
+#home .ctr_wrapper>.container>.contents>#item_wrapper .item{
+	width: 360px;
+	height: 160px;
+	position: relative;
+	margin:10px;
+	border: dotted 2px #837964;
+/*	border-radius: 10px;*/
+/*	background-color:#fff;*/
+/*	box-shadow:0 0 5px 0 #ccc;*/
+}
+#home .ctr_wrapper>.container>.contents>#item_wrapper .item>.title{
+	color: #fffff9;
+	position:absolute;
+ 	top: 50%;
+ 	left: 50%;
+  	transform: translateY(-50%) translateX(-50%);
+  	-webkit- transform: translateY(-50%) translateX(-50%);
+  	margin: auto;
+
+}
+#home .ctr_wrapper>.container>.contents>#item_wrapper .item>.image{
+	position:absolute;
+ 	top: 50%;
+  	left: 50%;
+  	transform: translateY(-50%) translateX(-50%);
+  	-webkit- transform: translateY(-50%) translateX(-50%);
+  	margin: auto;
+	opacity: 0.5;
+}
+
+/* コンテンツ ここまで↑*/
+/* -------------------- */
+/* -------------------- */
+
+
+/* -------------------- */
+/* -------------------- */
+/* footer ここから↓ */
+#f_wrapper{
+	background-color:#97b3c3;
+	opacity: 0.8;
+}
+
+#f_wrapper>.footer>p>small,
+#f_wrapper>.footer>p>i{
+	color: #fff;
+}
+/* footer ここまで↑*/
+/* -------------------- */
+/* -------------------- */
+
+
+/* 基本レイアウト ここまで↑*/
+/* -------------------- */
+/* -------------------- */
+
+
+/* -------------------- */
+/* -------------------- */
+/* 基本レイアウト ここから↓ */
+
+/* 基本レイアウト ここまで↑*/
+/* -------------------- */
+/* -------------------- */
